@@ -159,5 +159,174 @@ print(item2.price)
 # print(item1)
 # print(item2.__dict__) #all ithe attribute for the instance level
 
+
+'''
+Inheritance
+Inheritance is the capability of one class to derive or inherit the properties from another class.
+The class that derives properties is called the derived class or child class and the class from
+which the properties are being derived is called the base class or parent class.
+The benefits of inheritance are:
+It represents real-world relationships well.
+It provides the reusability of a code.
+We don’t have to write the same code again and again.
+Also, it allows us to add more features to a class without modifying it.
+It is transitive in nature, which means that if class B inherits from another class A,
+then all the subclasses of B would automatically inherit from class A.
+'''
+'''
+Types of Inheritance – 
+Single Inheritance:
+Single-level inheritance enables a derived class to inherit characteristics from a single-parent class.
+
+Multilevel Inheritance:
+Multi-level inheritance enables a derived class to inherit properties from an immediate parent class 
+which in turn inherits properties from his parent class.
+
+Hierarchical Inheritance:
+Hierarchical level inheritance enables more than one derived class to inherit properties from a parent class.
+
+Multiple Inheritance:
+Multiple level inheritance enables one derived class to inherit properties from more than one base class.
+
+Example: Inheritance in Python
+'''
+#Python code to demonstrate how parent constructors
+# are called.
+ 
+# parent class
+class Person(object):
+ 
+    # __init__ is known as the constructor
+    def __init__(self, name, idnumber):
+        self.name = name
+        self.idnumber = idnumber
+ 
+    def display(self):
+        print(self.name)
+        print(self.idnumber)
+         
+    def details(self):
+        # print("My name is {}".format(self.name))
+        print(f"My name is {self.name}")
+        print("IdNumber: {}".format(self.idnumber))
+        # child class
+class Employee(Person):
+    def __init__(self, name, idnumber, salary, post):
+        self.salary = salary
+        self.post = post
+ 
+        # invoking the __init__ of the parent class
+        Person.__init__(self, name, idnumber)
+         
+    def details(self):
+        print("My name is {}".format(self.name))
+        print("IdNumber: {}".format(self.idnumber))
+        print("Post: {}".format(self.post))
+ 
+# creation of an object variable or an instance
+a = Employee('douglas', 886012, 200000, "Intern")
+ 
+# calling a function of the class Person using
+# its instance
+a.display()
+a.details()
+
+'''Polymorphism
+Polymorphism simply means having many forms. For example,we need to determine if the given species of birds fly or not,
+using polymorphism we can do this using a single function.'''
+
+class Bird:
+   
+    def intro(self):
+        print("There are many types of birds.")
+ 
+    def flight(self):
+        print("Most of the birds can fly but some cannot.")
+ 
+class sparrow(Bird):
+   
+    def flight(self):
+        print("Sparrows can fly.")
+ 
+class ostrich(Bird):
+ 
+    def flight(self):
+         print("Ostriches cannot fly.")
+ 
+obj_bird = Bird()
+obj_spr = sparrow()
+obj_ost = ostrich()
+ 
+obj_bird.intro()
+obj_bird.flight()
+ 
+obj_spr.intro()
+obj_spr.flight()
+ 
+obj_ost.intro()
+obj_ost.flight()
+
+'''Encapsulation
+Encapsulation is one of the fundamental concepts in object-oriented programming (OOP).
+It describes the idea of wrapping data and the methods that work on data within one unit. 
+This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data.
+To prevent accidental change, an object’s variable can only be changed by an object’s method.
+Those types of variables are known as private variables.
+A class is an example of encapsulation as it encapsulates all the data that is member functions, variables, etc.'''
+
+# Creating a Base class
+# class Base:
+#     def __init__(self):
+#         self.a = "GeeksforGeeks"
+#         self.__c = "GeeksforGeeks"
+ 
+# # Creating a derived class
+# class Derived(Base):
+#     def __init__(self):
+ 
+#         # Calling constructor of
+#         # Base class
+#         Base.__init__(self)
+#         print("Calling private member of base class: ")
+        
+#         # Driver code
+# obj1 = Base()
+# print(obj1.a)
+
+# Python program to
+# demonstrate protected members
+ 
+ 
+# Creating a base class
+class Base:
+    def __init__(self):
+ 
+        # Protected member
+        self._a = 2
+ 
+# Creating a derived class
+class Derived(Base):
+    def __init__(self):
+ 
+        # Calling constructor of
+        # Base class
+        Base.__init__(self)
+        print("Calling protected member of base class: ",
+              self._a)
+ 
+        # Modify the protected variable:
+        self._a = 3
+        print("Calling modified protected member outside class: ",
+              self._a)
+# obj1 = Derived()
+ 
+# obj2 = Base()
+# # Calling protected member
+# # Can be accessed but should not be done due to convention
+# print("Accessing protected member of obj1: ", obj1._a)
+ 
+# # Accessing the protected variable outside
+# print("Accessing protected member of obj2: ", obj2._a)
+ 
     
     
