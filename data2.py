@@ -1,4 +1,5 @@
 import sqlite3
+
 '''LETS KNOW THE DATA TYPES WE HAVE IN sqlite3
 Null  --> means doesnot exist
 integers --> means real numbers
@@ -123,23 +124,90 @@ c = conn.cursor()
 #           """)
 
 '''DELETE RECORD'''
-c.execute("DELETE from customers WHERE rowid = 6")
+# c.execute("DELETE from customers WHERE rowid = 6")
+
 
 '''we need to commit this'''
-conn.commit()
+# conn.commit()
 
-c.execute("SELECT rowid, * FROM customers")
-item = c.fetchall()
-for i in item:
-    print(i)
+# c.execute("SELECT rowid, * FROM customers")
+
+'''QUERY THE DATABASE ORDER BY'''
+#by accending
+c.execute("SELECT rowid, * FROM customers ORDER BY rowid")
+# #by decending
+# c.execute("SELECT rowid, * FROM customers ORDER BY rowid DESC")  #-rowid
+# #by lastname with assending
+# c.execute("SELECT rowid, * FROM customers ORDER BY last_name ")  
+
+# #by lastname with decending
+# c.execute("SELECT rowid, * FROM customers ORDER BY last_name DESC")  
+
+'''QUERY THE DATABASE ORDER BY AND and OR'''
+# c.execute("SELECT rowid, * FROM customers WHERE last_name LIKE 'D%' AND rowid = 2 ")
+# c.execute("SELECT rowid, * FROM customers WHERE last_name LIKE 'D%' OR rowid = 2 ")
+
+'''LIMITING RESULTS'''
+# c.execute("SELECT rowid, * FROM customers  ")
 
 
-# print('command executed successfully...')
-'''every database created must end with commit and close'''
-conn.commit() 
-conn.close()
+'''CREATING A FUNCTION TO USE IN OUR SIMPLEAPP.PY'''
+# c.execute("SELECT rowid, * FROM customers ORDER BY rowid LIMIT 1")
 
-#58:20
+# item = c.fetchall()
+# # for i in item:
+# #     print(i)
+
+# print(item)
+
+# # print('command executed successfully...')
+# '''every database created must end with commit and close'''
+# conn.commit() 
+# conn.close()
+
+'''CREATING A FUNCTION TO USE IN OUR SIMPLEAPP.PY'''
+# query the database and return all records
+def show_all():
+    
+    #connecting to the database
+    conn = sqlite3.connect('customer.db')
+    
+    #creating a cursor
+    c = conn.cursor()
+    # query the database
+    c.execute("SELECT rowid, * FROM customers ")
+
+    item = c.fetchall()
+    for i in item:
+        print(i)
 
 
 
+    # print('command executed successfully...')
+    '''every database created must end with commit and close'''
+    conn.commit() 
+    conn.close()
+    
+'''ADD A NEW RECORD TO OUR TABLE'''
+def add_one(first_name, last_name, email_address):
+     #connecting to the database
+    # conn = sqlite3.connect('customer.db')
+    c = conn.cursor()
+    # executing and passing in the  parameters
+    c.execute("INSERT INTO customers VALUES (?,?,?)", (first_name, last_name, email_address))
+    conn.commit() 
+    conn.close()
+    
+'''ADD A NEW MANY TO OUR TABLE'''
+def add_many(list):
+    
+    conn = sqlite3.connect('customer.db')
+    c = conn.cursor()
+    c.executemany("INSERT INTO customers VALUES (?,?,?)", (list))
+    
+    conn.commit() 
+    conn.close()
+
+
+
+# 1:24:45

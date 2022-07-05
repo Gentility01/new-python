@@ -103,18 +103,20 @@ equal equal to --> means ==
 #     print('nothing is happening here')
 
 #nested conditions it is kinda having a condition(s) inside an existing condition
+# print(dic.get(1))
+words = {'man':'a man is a male human being',
+         'woman': 'a woman can be said to be a female human being',
+         'animal':'animals are not human'
+         }
 
-name = 'Divine'
+print(words.items())
+# for w in words.values():
+#     print(w)
 
-
-if len(name) > 5:
-    
-    if 'y' in name :
-        print(f'we also have the letter N in {name}')
-    elif 'v' in name:
-        print(f'we also have the letter Y in {name}')
-        
-        
-    print(f'the length of {name} is greater than 5')
-else:
-    print(f'the length of {name} is not greater than 5')
+# meaning = input('please search here:\n')
+# if  meaning ==  'man' :
+#     print(words.get('man'))
+# if meaning  == 'woman':
+#     print(words.get('woman'))
+# if 'animal' in meaning:
+#     print(words.get('animal'))
