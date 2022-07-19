@@ -1,28 +1,28 @@
 '''CREATING A CLASS WITH INSTACE ATRRIBUTE'''
-# class Item:
-#     # we can write a method that can be used or executte in the instances
-#     # methods are functions inside a class
-#     def calculate_price(self, x, y): #self: python passes the object itself as the first augment when u call the methods you can call the self something else . 
-#         return x , y
+class Item:
+    # we can write a method that can be used or executte in the instances
+    # methods are functions inside a class
+    def calculate_price(self, x, y): #self: python passes the object itself as the first augment when u call the methods you can call the self something else . 
+        return x + y
         
         
     
 
-# item1 = Item() #this can be said to be the instance of the class in a variable
+item1 = Item() #this can be said to be the instance of the class in a variable
 
-# item1.name = 'phone' #this can be said to be the attribute of a class
-# item1.price= 2000  #this can be said to be the attribute of a class
-# item1.quantity= 2  #this can be said to be the attribute of a class
+item1.name = 'phone' #this can be said to be the attribute of a class
+item1.price= 2000  #this can be said to be the attribute of a class
+item1.quantity= 2  #this can be said to be the attribute of a class
 
-# a = item1.calculate_price(item1.price, item1.quantity)
-# print(a)
+a = item1.calculate_price(item1.price, item1.quantity)
+print(a)
 
-# item2 = Item()
-# item1.name = 'laptop'
-# item2.price = 20000
-# item2.quantity = 3
-# a = item2.calculate_price(item2.price, item2.quantity)
-# print(a)
+item2 = Item()
+item2.name = 'laptop'
+item2.price = 20000
+item2.quantity = 3
+a = item2.calculate_price(item2.price, item2.quantity)
+print(a)
 
 
 '''using the __init__method  and __init__ are called the constructor'''
@@ -31,7 +31,7 @@ class Item:
     
     
     
-    # def __init__(self): #this __init__ is said to be one of the magic methods in classes and it passes the method  without calling it as an attrbute but the values are passed in the instances of that vlass
+    # def __init__(self): #this __init__ is said to be one of the magic methods in classes and it passes the method  without calling it as an attrbute but the values are passed in the instances of that class
     #     price = 2000
     #     quantity = 2
     #     print(price * quantity)
@@ -91,11 +91,11 @@ class Item:
 '''using assert statement: assert statement is a keyword that is used to  check if there is a match with what is ha
 ppening to your expectation'''
 
-# class Items:
-#     def __init__(self, name: str, price: float, quantity): 
-        #run validation to the  recieved argument
-        # assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
-        # assert quantity >= 0
+class Items:
+    def __init__(self, name: str, price: float, quantity): 
+        # run validation to the  recieved argument
+        assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+        assert quantity >= 0
 '''we can also add our own error messages'''
         # assert price >= 0 , f'price of {price} must not be a negetive number'
         # assert quantity >= 0, f'price of {quantity} must not be a negetive number'
@@ -117,22 +117,22 @@ ppening to your expectation'''
 
 '''CREATING A CLASS WITH CLASS ATRRIBUTE'''
 
-class Items:
-    pay_rate = 10
-    def __init__(self, name: str, price: float, quantity): 
-        assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
-        assert quantity >= 0
+# class Items:
+#     pay_rate = 10
+#     def __init__(self, name: str, price: float, quantity): 
+#         assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+#         assert quantity >= 0
         
-        self.name = name  #assigning the attribute of name to the instance  that is going to be created
-        self.price = price
-        self.quantity = quantity
+#         self.name = name  #assigning the attribute of name to the instance  that is going to be created
+#         self.price = price
+#         self.quantity = quantity
         
-    def total_price(self):
-            return self.price * self.quantity
+#     def total_price(self):
+#             return self.price * self.quantity
         
-    def appy_discount(self):
-        # self.price = self.price * Items.pay_rate  #classattribute
-        self.price = self.price * self.pay_rate  #classattribute : with self we can no overwrite the class attribute
+#     def appy_discount(self):
+#         # self.price = self.price * Items.pay_rate  #classattribute
+#         self.price = self.price * self.pay_rate  #classattribute : with self we can no overwrite the class attribute
             
 # item1 = Items.pay_rate  #class attribute
 # item2 = Items.pay_rate
@@ -141,14 +141,14 @@ class Items:
 # print(item2)
 # print(item3)
 
-item1 = Items('Laptop',23,3)
-item1.appy_discount()
-print(item1.price)
+# item1 = Items('Laptop',23,3)
+# item1.appy_discount()
+# print(item1.price)
 
-item2 = Items('Phone',23,3)
-item2.pay_rate = 0.4  # overwite the class class attribute here
-item2.appy_discount()
-print(item2.price)
+# item2 = Items('Phone',23,3)
+# item2.pay_rate = 0.4  # overwite the class class attribute here
+# item2.appy_discount()
+# print(item2.price)
 
 #40:50
     
@@ -194,91 +194,115 @@ Example: Inheritance in Python
 # are called.
  
 # parent class
-class Person(object):
+# class Person(object):
  
-    # __init__ is known as the constructor
-    def __init__(self, name, idnumber):
-        self.name = name
-        self.idnumber = idnumber
+#     # __init__ is known as the constructor
+#     def __init__(self, name, idnumber):
+#         self.name = name
+#         self.idnumber = idnumber
  
-    def display(self):
-        print(self.name)
-        print(self.idnumber)
+#     def display(self):
+#         print(self.name)
+#         print(self.idnumber)
          
-    def details(self):
-        # print("My name is {}".format(self.name))
-        print(f"My name is {self.name}")
-        print("IdNumber: {}".format(self.idnumber))
-        # child class
-class Employee(Person):
-    def __init__(self, name, idnumber, salary, post):
-        self.salary = salary
-        self.post = post
+#     def details(self):
+#         # print("My name is {}".format(self.name))
+#         print(f"My name is {self.name}")
+#         print("IdNumber: {}".format(self.idnumber))
+#         # child class
+# class Employee(Person):
+#     def __init__(self, name, idnumber, salary, post):
+#         self.salary = salary
+#         self.post = post
  
-        # invoking the __init__ of the parent class
-        Person.__init__(self, name, idnumber)
+#         # invoking the __init__ of the parent class
+#         Person.__init__(self, name, idnumber)
          
-    def details(self):
-        print("My name is {}".format(self.name))
-        print("IdNumber: {}".format(self.idnumber))
-        print("Post: {}".format(self.post))
+#     def details(self):
+#         print("My name is {}".format(self.name))
+#         print("IdNumber: {}".format(self.idnumber))
+#         print("Post: {}".format(self.post))
  
-# creation of an object variable or an instance
-a = Employee('douglas', 886012, 200000, "Intern")
+# # creation of an object variable or an instance
+# a = Employee('douglas', 886012, 200000, "Intern")
  
-# calling a function of the class Person using
-# its instance
-a.display()
-a.details()
+# # calling a function of the class Person using
+# # its instance
+# a.display()
+# a.details()
 
-'''Polymorphism
-Polymorphism simply means having many forms. For example,we need to determine if the given species of birds fly or not,
-using polymorphism we can do this using a single function.'''
+# '''Polymorphism
+# Polymorphism simply means having many forms. For example,we need to determine if the given species of birds fly or not,
+# using polymorphism we can do this using a single function.'''
 
-class Bird:
+# class Bird:
    
-    def intro(self):
-        print("There are many types of birds.")
+#     def intro(self):
+#         print("There are many types of birds.")
  
-    def flight(self):
-        print("Most of the birds can fly but some cannot.")
+#     def flight(self):
+#         print("Most of the birds can fly but some cannot.")
  
-class sparrow(Bird):
+# class sparrow(Bird):
    
-    def flight(self):
-        print("Sparrows can fly.")
+#     def flight(self):
+#         print("Sparrows can fly.")
  
-class ostrich(Bird):
+# class ostrich(Bird):
  
-    def flight(self):
-         print("Ostriches cannot fly.")
+#     def flight(self):
+#          print("Ostriches cannot fly.")
  
-obj_bird = Bird()
-obj_spr = sparrow()
-obj_ost = ostrich()
+# obj_bird = Bird()
+# obj_spr = sparrow()
+# obj_ost = ostrich()
  
-obj_bird.intro()
-obj_bird.flight()
+# obj_bird.intro()
+# obj_bird.flight()
  
-obj_spr.intro()
-obj_spr.flight()
+# obj_spr.intro()
+# obj_spr.flight()
  
-obj_ost.intro()
-obj_ost.flight()
+# obj_ost.intro()
+# obj_ost.flight()
 
-'''Encapsulation
-Encapsulation is one of the fundamental concepts in object-oriented programming (OOP).
-It describes the idea of wrapping data and the methods that work on data within one unit. 
-This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data.
-To prevent accidental change, an object’s variable can only be changed by an object’s method.
-Those types of variables are known as private variables.
-A class is an example of encapsulation as it encapsulates all the data that is member functions, variables, etc.'''
+# '''Encapsulation
+# Encapsulation is one of the fundamental concepts in object-oriented programming (OOP).
+# It describes the idea of wrapping data and the methods that work on data within one unit. 
+# This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data.
+# To prevent accidental change, an object’s variable can only be changed by an object’s method.
+# Those types of variables are known as private variables.
+# A class is an example of encapsulation as it encapsulates all the data that is member functions, variables, etc.'''
 
-# Creating a Base class
+# # Creating a Base class
+# # class Base:
+# #     def __init__(self):
+# #         self.a = "GeeksforGeeks"
+# #         self.__c = "GeeksforGeeks"
+ 
+# # # Creating a derived class
+# # class Derived(Base):
+# #     def __init__(self):
+ 
+# #         # Calling constructor of
+# #         # Base class
+# #         Base.__init__(self)
+# #         print("Calling private member of base class: ")
+        
+# #         # Driver code
+# # obj1 = Base()
+# # print(obj1.a)
+
+# # Python program to
+# # demonstrate protected members
+ 
+ 
+# # Creating a base class
 # class Base:
 #     def __init__(self):
-#         self.a = "GeeksforGeeks"
-#         self.__c = "GeeksforGeeks"
+ 
+#         # Protected member
+#         self._a = 2
  
 # # Creating a derived class
 # class Derived(Base):
@@ -287,46 +311,22 @@ A class is an example of encapsulation as it encapsulates all the data that is m
 #         # Calling constructor of
 #         # Base class
 #         Base.__init__(self)
-#         print("Calling private member of base class: ")
-        
-#         # Driver code
-# obj1 = Base()
-# print(obj1.a)
-
-# Python program to
-# demonstrate protected members
+#         print("Calling protected member of base class: ",
+#               self._a)
  
+#         # Modify the protected variable:
+#         self._a = 3
+#         print("Calling modified protected member outside class: ",
+#               self._a)
+# # obj1 = Derived()
  
-# Creating a base class
-class Base:
-    def __init__(self):
+# # obj2 = Base()
+# # # Calling protected member
+# # # Can be accessed but should not be done due to convention
+# # print("Accessing protected member of obj1: ", obj1._a)
  
-        # Protected member
-        self._a = 2
- 
-# Creating a derived class
-class Derived(Base):
-    def __init__(self):
- 
-        # Calling constructor of
-        # Base class
-        Base.__init__(self)
-        print("Calling protected member of base class: ",
-              self._a)
- 
-        # Modify the protected variable:
-        self._a = 3
-        print("Calling modified protected member outside class: ",
-              self._a)
-# obj1 = Derived()
- 
-# obj2 = Base()
-# # Calling protected member
-# # Can be accessed but should not be done due to convention
-# print("Accessing protected member of obj1: ", obj1._a)
- 
-# # Accessing the protected variable outside
-# print("Accessing protected member of obj2: ", obj2._a)
+# # # Accessing the protected variable outside
+# # print("Accessing protected member of obj2: ", obj2._a)
  
     
     

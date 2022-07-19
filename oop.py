@@ -95,6 +95,70 @@
 # a = 'obi'
 # print(type(a))
 
+
+
+
+class Items:
+    def __init__(self, name: str, price: float, quantity): 
+        # run validation to the  recieved argument
+        assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+        assert quantity >= 0
+
+        assert price >= 0 , f'price of {price} must not be a negetive number'
+        assert quantity >= 0, f'price of {quantity} must not be a negetive number'
+        
+        
+        
+        # assign to self.object
+        self.name = name  #assigning the attribute of name to the instance  that is going to be created
+        self.price = price
+        self.quantity = quantity
+     
+
+#     def total_price(self):
+#         return self.price * self.quantity
+    
+# item1 = Items('Laptop',23,3)
+# print(item1.total_price())
+
+
+# item1 = Items.__dict__ #all the attribute for  class level
+# item2 = Items('Laptop',23,3)
+# print(item1)
+# print(item2.__dict__) #all ithe attribute for the instance level
     
 
-    
+# class Person(object):
+#     def __init__(self, name, idnumber):
+#         self.name = name
+#         self.idnumber = idnumber
+ 
+#     def display(self):
+#         print(self.name)
+#         print(self.idnumber)
+         
+#     def details(self):
+#         # print("My name is {}".format(self.name))
+#         print(f"My name is {self.name}")
+#         print("IdNumber: {}".format(self.idnumber))
+#         # child class
+# class Employee(Person):
+#     def __init__(self, name, idnumber, salary, post):
+#         self.salary = salary
+#         self.post = post
+ 
+#         # invoking the __init__ of the parent class
+#         Person.__init__(self, name, idnumber)
+         
+#     def details(self):
+#         print("My name is {}".format(self.name))
+#         print("IdNumber: {}".format(self.idnumber))
+#         print("Post: {}".format(self.post))
+ 
+# # creation of an object variable or an instance
+# a = Employee('douglas', 886012, 200000, "Intern")
+ 
+# # calling a function of the class Person using
+# # its instance
+# a.display()
+# a.details()

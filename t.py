@@ -109,7 +109,7 @@ words = {'man':'a man is a male human being',
          'animal':'animals are not human'
          }
 
-print(words.items())
+# print(words.items())
 # for w in words.values():
 #     print(w)
 
@@ -120,3 +120,21 @@ print(words.items())
 #     print(words.get('woman'))
 # if 'animal' in meaning:
 #     print(words.get('animal'))
+
+
+class Dog:
+   def ekuke():
+        voice = 'I can bark'
+        walk = 'i can walk with 4 legs'
+        smell = 'i ca snif very well'
+        print(voice, walk, smell)
+        
+   def jshephad():
+       voice = input('enter the  voice attribute')
+       walks = input('enter the  walking attribute')
+       print(voice, walks)
+        
+    
+        
+c =Dog
+c.jshephad()
