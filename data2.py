@@ -28,7 +28,7 @@ BLOB  --> means kind of images mp3file or music file '''
 # #STEP THREE:
 # # creata a table
 # #when we want to create a table we use our cursor (command of what our cosor will do)
-# #sqlite3 IS CASE SENSITIVE SO  FOOLOW THE SAME STEP Like UPPERCASE CREATE TABLE and lowercase customer
+# #sqlite3 IS CASE SENSITIVE SO  FOLLOW THE SAME STEP Like UPPERCASE CREATE TABLE and lowercase customer
 
 # '''using a single quotaion mark can make ur code not to be readable'''
 
@@ -57,16 +57,16 @@ BLOB  --> means kind of images mp3file or music file '''
 
 
 '''INSERT ONE RECORD TO THE DATABASE'''
-# conn = sqlite3.connect('customer.db')
+conn = sqlite3.connect('customer.db')
 
-# c = conn.cursor()
+c = conn.cursor()
 
 # # EXECUTE OUR cusor
-# c.execute("INSERT INTO customers VALUES ('Mary', 'Doe', 'mary@gmail.com') ")  #sqlite3 COMMAND TO INSERT TABLE
+c.execute("INSERT INTO customers VALUES ('Mary', 'Doe', 'mary@gmail.com') ")  #sqlite3 COMMAND TO INSERT TABLE
 
-# print('command executed successfully...')
-# conn.commit() 
-# conn.close()
+print('command executed successfully...')
+conn.commit() 
+conn.close()
 
 '''INSERT MANY  TABLE TO THE DATABASE'''
 

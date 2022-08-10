@@ -26,10 +26,26 @@
 
 # print(mydoubler(11))
 
-x = lambda a : a + 15
-print(x(10))
+# x = lambda a : a + 15
+# print(x(10))
 
 
-nums = lambda x, y : x * y
-print(nums(12, 4))
+# nums = lambda x, y : x * y
+# print(nums(12, 4))
 
+
+
+# x = lambda a : a - 10
+# print(x(20))
+
+# x = lambda a, b, c, d, e : a * b + c / d + e
+# print(x(5, 6, 8, 9, 10))
+
+
+
+
+string='some kind of a useless lambda'
+print(lambda string : print(string))
+
+x="some kind of a useless lambda"
+(lambda x : print(x))(x)

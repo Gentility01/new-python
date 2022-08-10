@@ -104,10 +104,10 @@ equal equal to --> means ==
 
 #nested conditions it is kinda having a condition(s) inside an existing condition
 # print(dic.get(1))
-words = {'man':'a man is a male human being',
-         'woman': 'a woman can be said to be a female human being',
-         'animal':'animals are not human'
-         }
+# words = {'man':'a man is a male human being',
+#          'woman': 'a woman can be said to be a female human being',
+#          'animal':'animals are not human'
+#          }
 
 # print(words.items())
 # for w in words.values():
@@ -122,19 +122,89 @@ words = {'man':'a man is a male human being',
 #     print(words.get('animal'))
 
 
-class Dog:
-   def ekuke():
-        voice = 'I can bark'
-        walk = 'i can walk with 4 legs'
-        smell = 'i ca snif very well'
-        print(voice, walk, smell)
+# class Dog:
+#    def ekuke():
+#         voice = 'I can bark'
+#         walk = 'i can walk with 4 legs'
+#         smell = 'i ca snif very well'
+#         print(voice, walk, smell)
         
-   def jshephad():
-       voice = input('enter the  voice attribute')
-       walks = input('enter the  walking attribute')
-       print(voice, walks)
+#    def jshephad():
+#        voice = input('enter the  voice attribute')
+#        walks = input('enter the  walking attribute')
+#        print(voice, walks)
         
     
         
-c =Dog
-c.jshephad()
+# c =Dog
+# c.jshephad()
+
+# class Item:
+    
+#     def __init__(self): #this __init__ is said to be one of the magic methods in classes and it passes the method  without calling it as an attrbute but the values are passed in the instances of that class
+#         price = 2000
+#         quantity = 2
+#         print(price * quantity)
+    
+#     '''we can add more parameters in this  constructors all we need to do is to pass the name when caling the class'''  
+#     def __init__(self, name, price, quantity):
+#         total = price + quantity 
+#         print(f'the price for item: {name} is {total}')
+        
+
+# item1 = Item('Laptop', 2000, 2) #this can be said to be the instance of the class in a variable
+
+
+# item2 = Item('Phone',1500,5)
+
+
+# class Products:
+#     def __init__(self, name, price, quantity ):
+#         totalPrice = price * quantity
+#         print(f'product name: {name} price: {price} quantity: {quantity} and total price {totalPrice}')
+
+# users_input = int(input('enter the quantity you want: '))
+# prod1 = Products('Phone', 200000, users_input)
+
+
+# class Items:
+#     def __init__(self, name: str, price: float, quantity): 
+#         # run validation to the  recieved argument
+#         assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+#         assert quantity >= 0
+'''we can also add our own error messages'''
+        # assert price >= 0 , f'price of {price} must not be a negetive number'
+        # assert quantity >= 0, f'price of {quantity} must not be a negetive number'
+        
+        
+        
+        #assign to self.object
+#         self.name = name  #assigning the attribute of name to the instance  that is going to be created
+#         self.price = price
+#         self.quantity = quantity
+     
+
+#     def total_price(self):
+#         return self.price * self.quantity
+    
+# item1 = Items('Laptop',23,3)
+# print(item1.price)
+
+class Items:
+    def __init__(self, name: str, price: float, quantity): 
+        assert price >= 20,  f'{price} is not the price we are selling our product'
+        assert quantity >= 5, f'{quantity} is not aloowed you should have more than 5 products'
+
+        self.name = name  
+        self.price = price
+        self.quantity = quantity
+ 
+
+    def total_price(self):
+        return self.price * self.quantity
+
+name = input('enter you name: ')
+price = input('enter your price here: ')
+quantity = int(input('enter quantity you want: '))
+item1 = Items(name,price,quantity)
+print(item1.price)

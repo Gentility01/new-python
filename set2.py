@@ -66,3 +66,8 @@ q =set(('apples','banana','orange'))
 q1 =set('apples')
 print(q)
 print(q1)
+
+
+# 0041093062
+# gtb
+# jacob oke

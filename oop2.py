@@ -1,33 +1,33 @@
 '''CREATING A CLASS WITH INSTACE ATRRIBUTE'''
-class Item:
+# class Item:
     # we can write a method that can be used or executte in the instances
     # methods are functions inside a class
-    def calculate_price(self, x, y): #self: python passes the object itself as the first augment when u call the methods you can call the self something else . 
-        return x + y
+    # def calculate_price(self, x, y): #self: python passes the object itself as the first augment when u call the methods you can call the self something else . 
+    #     return x + y
         
         
     
 
-item1 = Item() #this can be said to be the instance of the class in a variable
+# item1 = Item() #this can be said to be the instance of the class in a variable
 
-item1.name = 'phone' #this can be said to be the attribute of a class
-item1.price= 2000  #this can be said to be the attribute of a class
-item1.quantity= 2  #this can be said to be the attribute of a class
+# item1.name = 'phone' #this can be said to be the attribute of a class
+# item1.price= 2000  #this can be said to be the attribute of a class
+# item1.quantity= 2  #this can be said to be the attribute of a class
 
-a = item1.calculate_price(item1.price, item1.quantity)
-print(a)
+# a = item1.calculate_price(item1.price, item1.quantity)
+# print(a)
 
-item2 = Item()
-item2.name = 'laptop'
-item2.price = 20000
-item2.quantity = 3
-a = item2.calculate_price(item2.price, item2.quantity)
-print(a)
+# item2 = Item()
+# item2.name = 'laptop'
+# item2.price = 20000
+# item2.quantity = 3
+# a = item2.calculate_price(item2.price, item2.quantity)
+# print(a)
 
 
 '''using the __init__method  and __init__ are called the constructor'''
 
-class Item:
+# class Item:
     
     
     
@@ -36,7 +36,7 @@ class Item:
     #     quantity = 2
     #     print(price * quantity)
     
-    '''we can add more parameters in this  constructors all we need to do is to pass the name when caling the class'''  
+'''we can add more parameters in this  constructors all we need to do is to pass the name when caling the class'''  
 #     def __init__(self, name, price, quantity):
 #         total = price + quantity 
 #         print(f'the price for item: {name} is {total}')
@@ -47,8 +47,8 @@ class Item:
 
 # item2 = Item('Phone',1500,5)
          
-    '''another way of doing this is by passing the self  that is in the parameter and we can now print the values 
-    when callint it as an instance'''
+'''another way of doing this is by passing the self  that is in the parameter and we can now print the values 
+when callint it as an instance'''
 #     def __init__(self, name, price, quantity):
 #         self.name = name  #assigning the attribute of name to the instance  that is going to be created
 #         self.price = price
@@ -91,11 +91,11 @@ class Item:
 '''using assert statement: assert statement is a keyword that is used to  check if there is a match with what is ha
 ppening to your expectation'''
 
-class Items:
-    def __init__(self, name: str, price: float, quantity): 
+# class Items:
+    # def __init__(self, name: str, price: float, quantity): 
         # run validation to the  recieved argument
-        assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
-        assert quantity >= 0
+        # assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+        # assert quantity >= 0
 '''we can also add our own error messages'''
         # assert price >= 0 , f'price of {price} must not be a negetive number'
         # assert quantity >= 0, f'price of {quantity} must not be a negetive number'
@@ -127,12 +127,12 @@ class Items:
 #         self.price = price
 #         self.quantity = quantity
         
-#     def total_price(self):
-#             return self.price * self.quantity
+#     # def total_price(self):
+#     #         return self.price * self.quantity
         
 #     def appy_discount(self):
 #         # self.price = self.price * Items.pay_rate  #classattribute
-#         self.price = self.price * self.pay_rate  #classattribute : with self we can no overwrite the class attribute
+#         self.price = self.price * self.pay_rate  #classattribute : with self we can now overwrite the class attribute
             
 # item1 = Items.pay_rate  #class attribute
 # item2 = Items.pay_rate
@@ -150,8 +150,83 @@ class Items:
 # item2.appy_discount()
 # print(item2.price)
 
-#40:50
-    
+'''Storing and printing all the items we have in a list using a class attribute'''
+
+# class Items:
+#     pay_rate = 10
+#     all = []
+#     def __init__(self, name: str, price: float, quantity): 
+#         assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+#         assert quantity >= 0
+        
+#         #assign to self object
+#         self.name = name  #assigning the attribute of name to the instance  that is going to be created
+#         self.price = price
+#         self.quantity = quantity
+
+#         #actions to execute
+#         Items.all.append(self)  #this is going to append(add) whatever that have self in it because of the  magic method __init__
+        
+#     # def total_price(self):
+#     #         return self.price * self.quantity
+        
+#     def appy_discount(self):
+#         # self.price = self.price * Items.pay_rate  #classattribute
+#         self.price = self.price * self.pay_rate  #classattribute : with self we can now overwrite the class attribute
+            
+
+
+# item1 = Items('Laptop',23000,3)
+# item2 = Items('phone',20000,5)
+# item3 = Items('moderm',8000,5)
+# item4 = Items('watch',2000,3)
+# item5 = Items('simcard', 600,1)
+
+# # print(Items.all) #printing all the items in a list
+
+# # getting all the name of products we have
+# # for instances in Items.all:
+# #     print(instances.name)
+
+# for instances in Items.all:
+#     print(f'name: {instances.name}, price: {instances.price}, quantity: {instances.quantity}')  
+
+
+
+'''Storing and printing all the items we have in a list using a magic method called __repr__'''
+class Items:
+    pay_rate = 10
+    all = []
+    def __init__(self, name: str, price: float, quantity): 
+        assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+        assert quantity >= 0
+        
+        #assign to self object
+        self.name = name  #assigning the attribute of name to the instance  that is going to be created
+        self.price = price
+        self.quantity = quantity
+        Items.all.append(self)
+
+
+    #actions to execute
+    def __repr__(self): #repr stands for representing your object
+        return f"Items name:{self.name}, price{self.price}, quantity{self.quantity}"
+
+    '''this __repr__ will print all the items the way we want we can remove the method and then 
+    print and see the diffrience'''
+        
+   
+item1 = Items('Laptop',23000,3)
+item2 = Items('phone',20000,5)
+item3 = Items('moderm',8000,5)
+item4 = Items('watch',2000,3)
+item5 = Items('simcard', 600,1)
+
+print(Items.all)
+
+ 
+
+
 
 '''using magic  class attribute __dict__ this will bring all the attribute that belong tot the object '''
 # item1 = Items.__dict__ #all the attribute for  class level

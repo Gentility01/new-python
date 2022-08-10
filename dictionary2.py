@@ -1,14 +1,17 @@
 
 # Python program to demonstrate working
 # of dictionary copy
-# dic = {1:'Chealsea', 2:'Manchester', 3:'Arsenal'}
-# print('original: ', dic)
+dic = {1:'Chealsea', 2:'Manchester', 3:'Arsenal'}
+print('original: ', dic)
+
+ooo = {1:'Chealsea', 2:'Manchester', 3:'Arsenal'}
+print('original: ', ooo)
  
 # Accessing value for key
-# print(dic.get(1))
+print(dic.get(1))
  
 # Accessing keys for the dictionary
-# print(dic.keys())
+print(dic.keys())
  
 # Accessing keys for the dictionary
 # print(dic.values())
