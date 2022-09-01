@@ -194,6 +194,52 @@ ppening to your expectation'''
 
 
 '''Storing and printing all the items we have in a list using a magic method called __repr__'''
+# class Items:
+#     pay_rate = 10
+#     all = []
+#     def __init__(self, name: str, price: float, quantity): 
+#         assert price >= 0 #when you put a negetive number in the price it is going to trow an assetion error
+#         assert quantity >= 0
+        
+#         #assign to self object
+#         self.name = name  #assigning the attribute of name to the instance  that is going to be created
+#         self.price = price
+#         self.quantity = quantity
+#         Items.all.append(self)
+
+
+#     #actions to execute
+#     def __repr__(self): #repr stands for representing your object
+#         return f"Items name:{self.name}, price{self.price}, quantity{self.quantity}"
+
+#     '''this __repr__ will print all the items the way we want we can remove the method and then 
+#     print and see the diffrience'''
+        
+   
+# item1 = Items('Laptop',23000,3)
+# item2 = Items('phone',20000,5)
+# item3 = Items('moderm',8000,5)
+# item4 = Items('watch',2000,3)
+# item5 = Items('simcard', 600,1)
+
+# print(Items.all)
+
+ 
+
+
+
+'''using magic  class attribute __dict__ this will bring all the attribute that belong tot the object '''
+# item1 = Items.__dict__ #all the attribute for  class level
+# item2 = Items('Laptop',23,3)
+# print(item1)
+# print(item2.__dict__) #all ithe attribute for the instance level
+
+'''extending and adding more features to our class like adding them to a database to make it simple we will 
+be using something called csv(comma sepeated value) it is just a file and we can use it to store our values
+before we start we nee to create a csv file we will be making use of the csv in the insances'''
+
+import csv
+
 class Items:
     pay_rate = 10
     all = []
@@ -206,33 +252,39 @@ class Items:
         self.price = price
         self.quantity = quantity
         Items.all.append(self)
+#making use of the csv here we need to convert the method to a class method by using @classmethod  decorators
+#when using a class method we will be using the cls insread of  self and
+# this means that when we call our class metod the class object itself is passed as the first argument but we must 
+#always remeber to import csv
+    @classmethod
+    def instanciating_from_csvfile(cls): 
+        with open('items.csv', 'r') as f:  #this willl read the csvfile
+            reading = csv.DictReader(f) #DictReader will read our file as a list of dictionary
+            items = list(reading) #here we are trying to put the csv back to a list so it can contain the  price and quantity
+        
+
+        for item in items:#iterating the csv file  
+            print(item)
+
+        
+
+       
+            
 
 
-    #actions to execute
+    # #actions to execute
     def __repr__(self): #repr stands for representing your object
         return f"Items name:{self.name}, price{self.price}, quantity{self.quantity}"
 
-    '''this __repr__ will print all the items the way we want we can remove the method and then 
-    print and see the diffrience'''
+    # '''this __repr__ will print all the items the way we want we can remove the method and then 
+    # print and see the diffrience'''
         
    
-item1 = Items('Laptop',23000,3)
-item2 = Items('phone',20000,5)
-item3 = Items('moderm',8000,5)
-item4 = Items('watch',2000,3)
-item5 = Items('simcard', 600,1)
 
+
+Items.instanciating_from_csvfile()
 print(Items.all)
 
- 
-
-
-
-'''using magic  class attribute __dict__ this will bring all the attribute that belong tot the object '''
-# item1 = Items.__dict__ #all the attribute for  class level
-# item2 = Items('Laptop',23,3)
-# print(item1)
-# print(item2.__dict__) #all ithe attribute for the instance level
 
 
 '''
@@ -306,9 +358,10 @@ Example: Inheritance in Python
 # a.display()
 # a.details()
 
-# '''Polymorphism
-# Polymorphism simply means having many forms. For example,we need to determine if the given species of birds fly or not,
-# using polymorphism we can do this using a single function.'''
+'''Polymorphism
+Polymorphism simply means having many forms. For example,we need to determine if the given species of birds fly or not,
+using polymorphism we can do this using a single function.
+ '''
 
 # class Bird:
    
@@ -341,7 +394,7 @@ Example: Inheritance in Python
 # obj_ost.intro()
 # obj_ost.flight()
 
-# '''Encapsulation
+'''Encapsulation
 # Encapsulation is one of the fundamental concepts in object-oriented programming (OOP).
 # It describes the idea of wrapping data and the methods that work on data within one unit. 
 # This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data.
@@ -352,8 +405,8 @@ Example: Inheritance in Python
 # # Creating a Base class
 # # class Base:
 # #     def __init__(self):
-# #         self.a = "GeeksforGeeks"
-# #         self.__c = "GeeksforGeeks"
+# #         self.a = "Products"
+# #         self.__c = "Manager"
  
 # # # Creating a derived class
 # # class Derived(Base):
