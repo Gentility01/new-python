@@ -25,10 +25,11 @@ BLOB  --> means kind of images mp3file or music file '''
 # c = conn.cursor()
 
 
+
 # #STEP THREE:
 # # creata a table
 # #when we want to create a table we use our cursor (command of what our cosor will do)
-# #sqlite3 IS CASE SENSITIVE SO  FOLLOW THE SAME STEP Like UPPERCASE CREATE TABLE and lowercase customer
+# #sqlite3 IS CASE SENSITIVE SO  FOLLOW THE SAME STEP Like UPPERCASE CREATE TABLE and lowercase customer 
 
 # '''using a single quotaion mark can make ur code not to be readable'''
 

@@ -187,6 +187,35 @@
 # stu3.displayStudent()
 # print('total no. of students:', Student.stuCount)
 
-import functions
-d = functions.book1
-print(d)
+# import functions
+# d = functions.book1
+# print(d)
+
+# import sqlite3
+# data = sqlite3.connect('customer3.db')
+# c = data.cursor()
+
+# c.execute("""CREATE TABLE customers(  
+#         first_name text, 
+#         last_name text, 
+#         email_address text
+    
+    
+# ) """)
+
+# c.execute("INSERT INTO customers VALUES ('Mary', 'Doe', 'mary@gmail.com') ")
+# print(c)
+
+# data.commit() 
+# data.close()
+
+
+# n = 1
+# while n < 5:
+#     n += 1
+#     print(n)
+# else:
+#     print('am done with the loop')
+
+
+

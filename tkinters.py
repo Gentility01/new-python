@@ -1,9 +1,9 @@
 # from cgitb import text
 
 
-from cgitb import text
-from msilib.schema import CheckBox
-import this
+# from cgitb import text
+# from msilib.schema import CheckBox
+# import this
 from tkinter import *
 import tkinter
 from webbrowser import get
