@@ -55,11 +55,11 @@ def login ():
                 bankOperation()
             
             else:
-                print ("Invalid username or Password \n")
+                print ("Invalid account number  or pin \n")
                 login ()
         
         else:
-            print ("Invalid username or Password \n")
+            print ("Invalid account number  or pin \n")
             login ()
 
 # USER REGISTRATION SECTION
@@ -321,6 +321,12 @@ def deposit():
 
 
 def checkbalance():
+    checking = int(input('checking for \n 1. savings \n 2. current'))
+    if checking == 1:
+        print(f'Your saving account balance is {saving_account_balance}')
+    elif checking == 2:
+        print(f'Your current account balance is {current_account_balance}')
+
     print ("some operations")
 
 def complaint():

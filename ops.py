@@ -43,5 +43,17 @@
 # c = phones(customers_name,customers_phone,number_of_phone_to_buy,price_of_phone)
 # print(c)
 
-num = str(input('enter a number: '))
-print(num)
+
+class Product:
+    def __init__(self, name: str, price:float, quantity):
+        assert quantity > 0, f'the quantity  {quantity} must be more than 0'
+#         assert quantity >= 0
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+
+
+p1 =  Product('phone', 20000, 20)
+print(p1.quantity)
+

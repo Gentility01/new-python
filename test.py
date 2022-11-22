@@ -219,3 +219,116 @@
 
 
 
+# a = 2
+# b = 20
+
+# if not(a < b or b == a):
+#     print('what we have is correct')
+
+# elif b==a:
+#     print('b==a')
+# else:
+#     print('nothing happened')
+
+
+# import sqlite3
+# cx = sqlite3.connect("test.db")
+
+# cu = cx.cursor()
+# cu.execute("create table lang(name, first_appeared)")
+# cu.execute("""CREATE TABLE customers(  
+#         first_name text, 
+#         last_name text, 
+#         email_address text
+    
+    
+# ) """)
+
+# cx.commit() 
+
+# cx.close()
+# number = 0
+# while number<10:
+#     number += 1
+#     print(number)
+
+# a = 0
+# while (0 < 10):   
+#     a = a + 1
+#     print("Amarachi")
+# else:
+#     print('0 is not less than 10')
+
+
+
+# a=10
+
+# for i in range(a):
+#     print(i+1)
+
+# list1 = [10, 20, 30, 40, 50]
+# # reverse list
+# new_list = reversed(list1)
+# # iterate reversed list
+# for item in new_list:
+#     print(item)
+
+
+# n = 5
+# k = 5
+# for i in range(0,n+1):
+#     for j in range(k-i,0,-1):
+#         print(j,end=' ')
+#     print()
+
+# for num in range(-10, 0, 1):
+#     print(num)
+
+# from tests import *
+
+# name = input('enter a name')
+# if name == 'amarachi'.capitalize():
+#     working()
+# else:
+#     not_working()
+
+# def bio(name, age):
+#     print(f' my name is {name} and i am {age} years old')
+
+# bio('chidi',21, 12)
+
+# def products(name, quantity, price):
+#     print(f'product name {name}\nproduct price{price}\n product quantity{quantity}' )
+
+
+# products('Phone', 10, 20000)
+
+# Write Python3 code here
+
+class Car():
+	
+	# init method or constructor
+	def __init__(self, model, color):
+		self.model = model
+		self.color = color
+		
+	def show(self):
+		print("Model is", self.model )
+		print("color is", self.color )
+		
+# both objects have different self which
+# contain their attributes
+audi = Car("audi a4", "blue")
+ferrari = Car("ferrari 488", "green")
+
+audi.show()	 # same output as car.show(audi)
+ferrari.show() # same output as car.show(ferrari)
+
+#note:we can also do like this
+print("Model for audi is ",audi.model)
+print("Colour for ferrari is ",ferrari.color)
+#this happens because after assigning in the constructor the attributes are linked to that particular object
+#here attributes(model,colour) are linked to objects(audi,ferrari) as we initialize them
+# Behind the scene, in every instance method
+# call, python sends the instances also with
+# that method call like car.show(audi)

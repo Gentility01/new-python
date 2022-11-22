@@ -23,8 +23,47 @@
 
 
 
-xt = str(1000)
+# xt = str(1000)
 
-x = xt.split()
+# x = xt.split()
 
-print(x)
+# print(x)
+
+# items = {
+#     'man':'this is a man',
+#     'woman':'this is a woman',
+#     'boy':'this is a boy',
+#     }
+
+# name =input('enter a name')
+# for k , v in items.items():
+#     if name in k:
+#         print('good')
+#         break
+
+
+# class Product:
+
+#     def __init__(self, name, quantity, price):
+#         self.name = name
+#         self.quantity = quantity
+#         self.price = price
+
+#     def my_products(self):
+#         print(f'products name = {self.name}, products quantity = {self.quantity}, and the product price = {self.price}')
+
+#     def total(self):
+#         print(f'the total price of {self.name} is {self.price * self.quantity}')
+
+# product1 = Product('Laptop', 20,3000000 )
+# product2 = Product('phone', 2,30000 )
+
+# product1.my_products()
+# product2.total()
+
+# a = [1,2,3]
+# print(a)
+
+class TeknoPhone:
+    def __init__(self):
+        

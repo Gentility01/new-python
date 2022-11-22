@@ -46,11 +46,36 @@
 #     print('Password is valid')
 
 
-import re
+# import re
 
-string = input('enter password ')
-regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
-if(regex.search(string) == None):
-	print("special is absent")
-else:
-	print("present")
+# string = input('enter password ')
+# regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
+# regex2 = re.compile('1234567890')
+# if(regex.search(string) == None):
+# 	print("special is absent")
+# elif(regex2.search(string) == None):
+# 	print('please add a number to your password')
+# else:
+# 	print("present")
+
+# database = {}
+
+# for userAccountNumber, userDetails in database.items():
+# 	pass
+# first_name = input ("What is your first name? \n")
+# last_name = input ("What is your last name? \n")
+# email = input ("What is your Email address? \n")
+# userPin = int (input ("Create a 4 digit pin number? \n"))
+
+
+database = {}
+accountNumber = int (input ("Enter Account Number \n"))
+userPinLogin = int (input ("Enter User Pin \n"))
+
+for userAccountNumber, userDetails in database.items():
+    if (accountNumber == userAccountNumber):
+        if (userDetails[3] == userPinLogin):
+
+
+database[database] = [first_name, last_name, email, userPin]
+

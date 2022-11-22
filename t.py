@@ -190,21 +190,40 @@ equal equal to --> means ==
 # item1 = Items('Laptop',23,3)
 # print(item1.price)
 
-class Items:
-    def __init__(self, name: str, price: float, quantity): 
-        assert price >= 20,  f'{price} is not the price we are selling our product'
-        assert quantity >= 5, f'{quantity} is not aloowed you should have more than 5 products'
+# class Items:
+#     def __init__(self, name: str, price: float, quantity): 
+#         assert price >= 20,  f'{price} is not the price we are selling our product'
+#         assert quantity >= 5, f'{quantity} is not aloowed you should have more than 5 products'
 
-        self.name = name  
-        self.price = price
-        self.quantity = quantity
+#         self.name = name  
+#         self.price = price
+#         self.quantity = quantity
  
 
-    def total_price(self):
-        return self.price * self.quantity
+#     def total_price(self):
+#         return self.price * self.quantity
 
-name = input('enter you name: ')
-price = input('enter your price here: ')
-quantity = int(input('enter quantity you want: '))
-item1 = Items(name,price,quantity)
-print(item1.price)
+# name = input('enter you name: ')
+# price = input('enter your price here: ')
+# quantity = int(input('enter quantity you want: '))
+# item1 = Items(name,price,quantity)
+# print(item1.price)
+
+class Item:
+    # we can write a method that can be used or executte in the instances
+    # methods are functions inside a class
+    def calculate_price(self, x, y, z): #self: python passes the object itself as the first augment when u call the methods you can call the self something else . 
+        print(x,y,z)
+        return y + z
+        
+        
+    
+
+item1 = Item() #this can be said to be the instance of the class in a variable
+
+item1.name = 'phone' #this can be said to be the attribute of a class
+item1.price= 2000  #this can be said to be the attribute of a class
+item1.quantity= 2  #this can be said to be the attribute of a class
+
+a = item1.calculate_price(item1.name, item1.price, item1.quantity)
+print(a)

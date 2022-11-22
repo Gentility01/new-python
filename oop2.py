@@ -36,7 +36,7 @@
     #     quantity = 2
     #     print(price * quantity)
     
-'''we can add more parameters in this  constructors all we need to do is to pass the name when caling the class'''  
+'''we can add more parameters in this  constructors(initializer) all we need to do is to pass the name when caling the class'''  
 #     def __init__(self, name, price, quantity):
 #         total = price + quantity 
 #         print(f'the price for item: {name} is {total}')
