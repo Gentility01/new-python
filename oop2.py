@@ -252,6 +252,10 @@ class Items:
         self.price = price
         self.quantity = quantity
         Items.all.append(self)
+
+    #this is a magic method is called represent thay will help represent objects in a class to look friendly
+    def __repr__(self):
+        return f'Items for ({self.name}, {self.price}, {self.quantity})'
 #making use of the csv here we need to convert the method to a class method by using @classmethod  decorators
 #when using a class method we will be using the cls insread of  self and
 # this means that when we call our class metod the class object itself is passed as the first argument but we must 

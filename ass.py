@@ -29,10 +29,51 @@ etc'''
 # for a in range(2, number+1):
 #     print(f'{a}')
 
-def goods(name, price, quantity):
-    total = price * quantity
-    print(f'product name: {name}, product price {price}, product quantity {quantity} total {total}')
+# def goods(name, price, quantity):
+#     total = price * quantity
+#     print(f'product name: {name}, product price {price}, product quantity {quantity} total {total}')
 
 
-quantity = int(input('enter quantity: '))
-goods('laptop', 300000, quantity)
+# quantity = int(input('enter quantity: '))
+# goods('laptop', 300000, quantity)
+
+# n = {'a,c,v,b'}
+
+# print(n)
+
+# try:
+#     a =  int(input('enter a number'))
+#     print(a)
+# except ValueError:
+#     print('please only numbers allowed try again ')
+#     a =  int(input('enter a number'))
+
+
+# try:
+#     a = int(input('enter a number'))
+#     b = 10 / a
+#     print(b)
+# except ValueError:
+#     print('please only numbers needed')
+# except ZeroDivisionError:
+#     print(f'cant divide 10 by {a}')
+#     while a < 1:
+#         try:
+#             a = int(input('enter a number'))
+#             b = 10 / a
+#         except ZeroDivisionError:
+#             print(f'cant divide 10 by {a}')
+#         except NameError:
+#             pass
+# else:
+#     print('working ooooooo')
+
+try:
+    a = int(input('enter a number'))
+    b = 10 / a
+    print(b)
+
+except:
+    print('ffffffff')
+
+   

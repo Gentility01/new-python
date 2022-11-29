@@ -44,16 +44,52 @@
 # print(c)
 
 
-class Product:
-    def __init__(self, name: str, price:float, quantity):
-        assert quantity > 0, f'the quantity  {quantity} must be more than 0'
-#         assert quantity >= 0
-        self.name = name
-        self.price = price
-        self.quantity = quantity
+# class Product:
+#     def __init__(self, name: str, price:float, quantity):
+#         assert quantity > 0, f'the quantity  {quantity} must be more than 0'
+# #         assert quantity >= 0
+#         self.name = name
+#         self.price = price
+#         self.quantity = quantity
 
 
 
-p1 =  Product('phone', 20000, 20)
-print(p1.quantity)
+
+# p1 =  Product('phone', 20000, 20)
+# print(p1.quantity)
+
+'''write a class where the user will input the quantity of product he or she wants and also and also have a fixed 
+price for each brand'''
+
+
+class Phones:
+        tekno = 60000
+        infinix = 70000
+        iphone = 90000
+
+        def __init__(self, name, quantity):
+                self.name = name
+                self.quantity = quantity
+
+        def total_price(self):
+                if self.name == 1:
+                        print(f'the total price of Tekno is {self.tekno * self.quantity}')
+                elif self.name == 2:
+                        print(f'the total price of Infinix is {self.infinix * self.quantity}')
+                elif self.name == 3:
+                        print(f'the total price of Iphone is {self.iphone * self.quantity}')
+
+print('List of phones in stuck')
+phone = int(input("""
+       1. tekno = 60000
+       2. infinix = 70000
+       3. iphone = 90000
+"""))
+qty =  int(input('enter the quantity of phone: '))
+p = Phones(phone, qty)
+p.total_price()
+
+
+
+
 
