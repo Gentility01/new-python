@@ -4,6 +4,7 @@ root = Tk()
 root.title('Simple Calculator')
 e = Entry(root, width=35, borderwidth=10)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+f_num = int("")
 
 def button_click(number):
     current = e.get()
@@ -12,6 +13,12 @@ def button_click(number):
     
 def button_clear():
     e.delete(1)
+
+def button_add():
+    first_number = e.get()
+    global f_num
+    f_num = int(first_number)
+    e.delete(0, END)
   
 # define buttons
 button1 = Button(root, text='1', padx=40, pady=20, command= lambda:button_click(1))
@@ -25,7 +32,7 @@ button8 = Button(root, text='8', padx=40, pady=20, command= lambda:button_click(
 button9 = Button(root, text='9', padx=40, pady=20, command= lambda:button_click(9))
 button0 = Button(root, text='0', padx=40, pady=20, command= lambda:button_click(0))
 buttonequal = Button(root, text='=', padx=39, pady=20, command= lambda:button_click())
-buttonadd = Button(root, text='+', padx=91, pady=20, command= lambda:button_click())
+buttonadd = Button(root, text='+', padx=91, pady=20, command= button_add())
 buttonclear = Button(root, text='clear', padx=79, pady=20, command= lambda:button_clear())
     
 #put the button on the screen

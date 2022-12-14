@@ -77,8 +77,8 @@ One way we can initialize NumPy arrays is from Python lists, using nested lists 
 
 #accessing a particular column in an array
 
-a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
-print(a[:,3])  #this means all the rows then the third column
+# a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+# print(a[:,3])  #this means all the rows then the third column
 
 
 
