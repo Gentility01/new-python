@@ -1,11 +1,11 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QAction, QLineEdit, QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QAction, QLineEdit, QMessageBox, QMainWindow
 # from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
 
 
-class App(QWidget):
+class App(QMainWindow):
     def __init__(self):
         super().__init__()  #The super() function allows us to avoid using the base class name explicitly
         self.title = "Simple Window"

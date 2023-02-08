@@ -10,7 +10,7 @@ steps in  creating simple gui application
 
 #import pyqt modules
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton,QMainWindow
 # from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
@@ -49,7 +49,7 @@ or being imported somewhere else by combining it with if statement, as shown bel
 
 
 '''ADDING A BUTTON TO OUR WINDOW'''
-class App(QWidget):
+class App(QMainWindow):
     def __init__(self):
         super().__init__()  #The super() function allows us to avoid using the base class name explicitly
         self.title = "Simple Window"
