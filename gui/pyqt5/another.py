@@ -1,58 +1,43 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton,QLabel, QMainWindow
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QPushButton, QAction, QLineEdit, QMessageBox
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtGui import QPixmap
- 
+
 class App(QMainWindow):
+
     def __init__(self):
-        super().__init__()  #The super() function allows us to avoid using the base class name explicitly
-        self.initUi()
-        
-        
-
-
-# define a method for the title
-    def initUi(self):
-        self.title = "Simple Window"
+        super().__init__()
+        self.title = 'PyQt5 textbox - pythonspot.com'
+        self.left = 10
+        self.top = 10
+        self.width = 400
+        self.height = 140
+        self.initUI()
+    
+    def initUI(self):
         self.setWindowTitle(self.title)
-        self.resize(800, 500)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+    
+        # Create textbox
+        self.textbox = QLineEdit(self)
+        self.textbox.move(20, 20)
+        self.textbox.resize(280,40)
         
-
-         #this is the next method where we will apply all the functionality in this init method
-        self.show_images()
-        self.set_button()   #this is the next method where we will apply all the functionality in this init method
+        # Create a button in the window
+        self.button = QPushButton('Show text', self)
+        self.button.move(20,80)
+        
+        # connect button to function on_click
+        self.button.clicked.connect(self.on_click)
         self.show()
-
     
-    def show_images(self):
-        
-        self.label = QLabel(self)
-        self.pixmap = QPixmap('gentlehub.jpg')
-        self.label.setPixmap(self.pixmap)
-        self.label.resize(self.pixmap.width(),self.pixmap.height())
-
-        
-    def set_button(self):
-        self.button =QPushButton(self, text="Submit")
-        self.button.setToolTip("this is a n example")
-        self.button.move(100, 70)
-        self.button.clicked.connect(self.when_clicked)
-
-
     @pyqtSlot()
-    def when_clicked(self):
-        print("welcome")
+    def on_click(self):
+        textboxValue = self.textbox.text()
+        QMessageBox.question(self, 'Message - pythonspot.com', "You typed: " + textboxValue, QMessageBox.Ok, QMessageBox.Ok)
+        self.textbox.setText("")
 
-        
-
-    
-
-# main method to run the application
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    execute = App()
+    ex = App()
     sys.exit(app.exec_())
- 
- 
- 
- 

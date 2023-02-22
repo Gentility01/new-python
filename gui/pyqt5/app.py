@@ -50,13 +50,29 @@ Step 5: Start the event loop
 
 Finally, you need to fire up the event loop by invoking the application.exec method:
 '''
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 
 application = QApplication([])
 mainWindow = QWidget()
 mainWindow.setGeometry(0, 0, 350, 400)
 mainWindow.setWindowTitle('Hello World')
-
+text = QLabel(application)
+text.setText("This thing must work in Jesus name")
 mainWindow.show()
 
 application.exec()
+
+
+
+# def window():
+#    app = QApplication(sys.argv)
+#    win = QWidget() 
+	
+#    l1 = QLabel()
+#    l2 = QLabel()
+#    l3 = QLabel()
+#    l4 = QLabel()
+	
+#    l1.setText("Hello World")
+#    l4.setText("TutorialsPoint")
+#    l2.setText("welcome to Python GUI Programming")
