@@ -10,7 +10,7 @@ class Calculator:
     def __init__(self):
         #setting up windows
         self.window = tk.Tk()
-        self.window.geometry("375x667")
+        # self.window.geometry("375x667")
         self.window.resizable(0,0)  #this is make your window not to be resizeable
         self.window.title("Calculator")
         self.total_expression = "0"
