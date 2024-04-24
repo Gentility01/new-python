@@ -30,3 +30,6 @@ canvas.pack()
 img = PhotoImage(file="picture/info.png")      
 canvas.create_image(20,20, anchor=NW, image=img)      
 mainloop()  
+
+def new():
+    pass
